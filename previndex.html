@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Default screen build Mobile */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --blue:#2e3092;
+            --white:#fff;
+        }
+        body {
+            font-family: sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        .r-app {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        .hr-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .justify-center {
+            justify-content: center;
+        }
+        .justify-around {
+            justify-content: space-around;
+        }
+        .justify-betweeen {
+            justify-content: space-between;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .flex-1{
+            flex: 1;
+        }
+        .gap-1 {
+            gap: 1rem;
+        }
+        .gap-2 {
+            gap: 1.5rem;
+        }
+        .gap-3 {
+            gap: 3rem;
+        }
+
+
+        .mr-2 {
+            margin-right: 8px;
+        }
+        .mr-4 {
+            margin-right: 16px;
+        }
+        .mr-6 {
+            margin-right: 24px;
+        }
+        .mr-auto {
+            margin-right: auto;
+        }
+
+        .ml-2 {
+            margin-left: 8px;
+        }
+        .ml-4 {
+            margin-left: 16px;
+        }
+        .ml-6 {
+            margin-left: 24px;
+        }
+        .ml-auto {
+            margin-left: auto;
+        }
+        .mt-2 {
+            margin-top: 8px;
+        }
+        .mt-4 {
+            margin-top: 16px;
+        }
+        .mt-6 {
+            margin-top: 24px;
+        }
+        .mt-auto {
+            margin-top: auto;
+        }
+        .mb-2 {
+            margin-bottom: 8px;
+        }
+        .mb-4 {
+            margin-bottom: 16px;
+        }
+        .mb-6 {
+            margin-bottom: 24px;
+        }
+        .mb-auto {
+            margin-bottom: auto;
+        }
+        .mx-2 {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+        .mx-4 {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+        .mx-6 {
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .my-2 {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .my-4 {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        .my-6 {
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+        .my-auto {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+
+
+        .pr-2 {
+            padding-right: 8px;
+        }
+        .pr-4 {
+            padding-right: 16px;
+        }
+        .pr-6 {
+            padding-right: 24px;
+        }
+        .pl-2 {
+            padding-left: 8px;
+        }
+        .pl-4 {
+            padding-left: 16px;
+        }
+        .pl-6 {
+            padding-left: 24px;
+        }
+
+        .pt-2 {
+            padding-top: 8px;
+        }
+        .pt-4 {
+            padding-top: 16px;
+        }
+        .pt-6 {
+            padding-top: 24px;
+        }
+
+        .pb-2 {
+            padding-bottom: 8px;
+        }
+        .pb-4 {
+            padding-bottom: 16px;
+        }
+        .pb-6 {
+            padding-bottom: 24px;
+        }
+        .px-2 {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .px-4 {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .px-6 {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .py-2 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        .py-4 {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        .py-6 {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: 1px solid var(--blue);
+            font-size: large;
+            border-radius: 4px;
+        }
+        .form-control:focus, .form-control:hover {
+            outline: none;
+            box-shadow: 0px 0px 5px var(--blue)
+        }
+        .form-group {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .rounded-lg {
+            border-radius: 10px;
+        }
+        .rounded-full {
+            border-radius: 50%;
+        }
+
+        .btn {
+            display: block;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: fit-content;
+            font-size: large;
+        }
+        .btn-primary {
+            background-color: var(--blue);
+        }
+
+        .font-xsm {
+            font-size: x-small;
+        }
+        .font-sm {
+            font-size: small;
+        }
+        .font-md {
+            font-size: medium;
+        }
+        .font-lg {
+            font-size: larger;
+        }
+        .font-xl {
+            font-size: x-large;
+        }
+        .font-xxl {
+            font-size:xx-large;
+        }
+        .font-bold {
+            font-weight: bold;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-left {
+            text-align: left;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .text-dark {
+            color: #151617;
+        }
+        .text-white {
+            color: #fff;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+        .w-400,.w-200, .w-600 {
+            width: 98%;
+        }
+        .h-screen {
+            height: 100vh;
+        }
+        .h-full {
+            height: 100%;
+        }
+        .h-400 {
+            height: 400px;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+        .hidden-sm {
+            display: none;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            background-color: #151617;
+            width: 180px;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right:-200px;
+            z-index: 99;
+            transition: all .3s linear;
+        }
+
+        .sidebar-open {
+            right: 0 !important;
+        }
+
+        /* Large devices (Tablets and Laptops) */
+        @media screen and (min-width:600px) {
+            .w-400 {
+                width: 400px;
+            }
+            .w-200 {
+                width: 200px;
+            }
+            .w-600 {
+                width: 600px;
+            }
+            .hidden-ls {
+                display: none;
+            }
+            .sidebar {
+                flex-direction: row;
+                background-color:transparent;
+                right:0px;
+                width: fit-content;
+                height: fit-content;
+                margin-right: 10px;
+                padding-right: 10px;
+            }
+            .overlay-close  {
+                z-index: -1;
+                visibility: hidden;
+            }
+            .nav-item {
+                color: #000 !important;
+            }
+            .nav-item:hover {
+                border-bottom: 1px solid black;
+            }
+        }
+
+        .p-rel {
+            position: relative;
+        }
+        .p-abs {
+            position: absolute;
+        }
+        .p-fixed {
+            position: fixed;
+        }
+        .overlay-close {
+            background-color: rgba(0,0,0, .1);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            visibility: hidden;
+            top: 0;
+            z-index: -1;
+        }
+        .ovr-open {
+            z-index: 3;
+            visibility: visible;
+        }
+        .sidelogo {
+            position: relative;
+            line-height: 15px;
+            color: #fff;
+        }
+        .sidelogo::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top:15px;
+            height:1px;
+            width: 100%;
+            background-color: #fff;
+            z-index: -1;
+        }
+        .nav-item {
+            color: #fff;
+            transition: all .3s linear;
+            width: 100%;
+            display: block;
+            padding: 5px;
+        }
+        .nav-item:hover {
+            color: green;
+            margin-left: 5px;
+        }
+        .main-layer {
+            flex: 1;
+        }
+        .centered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .circle-20 {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+        .circle-30 {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+        .circle-40 {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+        .circle-60 {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+        }
+        .circle-80 {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+        .bg-blue {
+            background-color: var(--blue);
+        }
+        .bg-white {
+            background-color: var(--white);
+        }
+        .dd {
+            height: 65px;
+            width: 80px;
+            border-radius: 8px;
+            border: 1px solid black;
+            margin: 5px;
+            background-color: #2e3092;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .aa {
+            position: absolute;
+            height: 15px;
+            background-color: #2e3092;
+            width: 150px;
+            border-radius: 50%;
+        }
+        .aa1 {
+            bottom: 25px;
+            left:10px;
+        }
+        .aa2 {
+            bottom: 30px;
+            left:10px;
+        }
+        .aa3 {
+            bottom: 40px;
+            left:10px;
+        }
+        .aa4 {
+            bottom: 35px;
+            left:10px;
+        }
+        .d-col {
+            display: flex;
+            flex-direction: column;
+        }
+        .platform {
+            height: 80px;
+            width: 160px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .arr-right {
+            right: 10px;
+        }
+        .arr-left {
+            left: 10px;
+        }
+        .x-hidden {
+            overflow-x: hidden;
+        }
+        .x-auto {
+            overflow-x: auto;
+        }
+        .y-hidden {
+            overflow-y: hidden;
+        }
+        .y-auto {
+            overflow-y: auto;
+        }
+        .img-cover {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="r-app">
+        <header class="header row justify-betweeen">
+            <div class="px-2 py-2">
+                <div id="openbar" class="pointer font-bold font-xl">
+                    &#9776;
+                </div>
+                <div class="pointer font-bold font-lg logo">
+                    dream girls
+                </div>
+                <p class="my-2 font-sm">What do you want to Create Today</p>
+                <button class="btn btn-primary text-white">Campaign</button>
+            </div>
+            <div class="px-2 py-2">
+                <div class="circle-40 bg-blue centered mx-auto">
+                    <div class="circle-20 bg-white"></div>
+                </div>
+                <p class="text-center font-sm">Hi Lisa, am karen <br>Your personal Assitant</p>
+            </div>
+            <div class="overlay-close" id="overlay-close"></div>
+        </header>
+        <div class="main-layer" style="overflow-y: auto;">
+            <div class="px-2 row">
+                <div class="" style="overflow-y: auto;height: 400px;overflow-x: hidden;">
+                    <div class="dd gr" data-value="hair">Hair</div>
+                    <div class="dd gr" data-value="dress">Dress</div>
+                    <div class="dd gr" data-value="skin">Skin</div>
+                    <div class="dd gr" data-value="shoe">Shoe</div>
+                </div>
+                <div class="flex-1 d-col">
+                    <div class="flex-1">
+                        <div class="mx-auto" style="width: 200px;">
+                            <img src="./images/girl1.png" alt="girl" class="w-200 h-400 img-cover">
+                        </div>
+                    </div>
+                    <div class="platform p-rel">
+                        <div class="aa aa1"></div>
+                        <div class="aa aa2"></div>
+                        <div class="aa aa3"></div>
+                        <div class="aa aa4"></div>
+                    </div>
+                </div>
+                <div class="h-400 x-hidden y-auto" id="sel">
+                    
+                </div> 
+            </div>
+            <div class="">
+                <div class="px-2 py-2 rounded-lg hr-row justify-betweeen gap-1" style="overflow-x: auto;">
+                    <div class="btn btn-primary w-200 centered text-white my-2 pointer">Community</div>
+                    <div class="btn btn-primary w-200 centered text-white my-2 pointer">Explore</div>
+                    <div class="btn btn-primary w-200 centered text-white my-2 pointer">Store</div>
+                </div>
+                <div class="p-rel hr-row gap-1">
+                    <div class="arr-left p-abs pointer"><</div>
+                    <div class="mx-auto w-400 hr-row gap-1" style="overflow-x: auto;">
+                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
+                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
+                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
+                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
+                    </div>
+                    <div class="arr-right p-abs pointer">></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let openbar = document.querySelector('#openbar');
+        let sidebar = document.querySelector('#sidebar');
+        let overleyClose = document.querySelector('#overlay-close');
+        let sel = document.querySelector('#sel');
+
+        let assets = {
+            "hair":[
+                'hair1',
+                'hair2',
+                'hair3',
+                'hair4',
+                'hair5',
+                'hair6',
+                'hair7',
+                'hair8',
+                'hair9',
+                'hair10'
+            ],
+            "dress":[
+                'dress1',
+                'dress2',
+                'dress3',
+                'dress4'
+            ],
+            "skin":[
+                'skin1',
+                'skin2',
+                'skin3',
+                'skin4'
+            ],
+            "shoe":[
+                'shoe1',
+                'shoe2',
+                'shoe3',
+                'shoe4'
+            ],
+        }
+
+        let ch = document.querySelectorAll('.gr');
+
+        ch.forEach(el => {
+            el.onclick = (e) => {
+                let r = ``;
+                assets[e.target.dataset.value].forEach(elem => {
+                    r +=`
+                        <div class="dd">${elem}</div>
+                    `;
+                })
+                sel.innerHTML = r;
+            }
+        });
+        
+
+        openbar.onclick = (e) => {
+            sidebar.classList.toggle('sidebar-open');
+            overleyClose.classList.toggle('ovr-open');
+        }
+        overleyClose.onclick = (e) => {
+            sidebar.classList.toggle('sidebar-open');
+            overleyClose.classList.toggle('ovr-open');
+        }
+    </script>
+</body>
+</html>
