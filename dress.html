@@ -540,32 +540,34 @@
             </div>
             <div class="overlay-close" id="overlay-close"></div>
         </header> 
-        <div class="h-full main-layer py-2 d-col">
-            <div class="h-full hidden-ls">
+        <div class="hidden-ls main-layer py-2 p-rel">
+            <div class=" h-full d-col">
                 <div class="h-full px-2 d-col">
-                    <div class="h-full d-col">
+                    <div class="flex-1 d-col">
                         <div class="mx-auto mt-auto" style="width: 200px;">
                             <img src="./images/girl1.png" alt="girl" class="w-200 h-400 img-cover mt-auto">
                         </div>
                     </div>
                     <div class="mt-auto d-col gap-1">
                         <div class="row gap-1" style="overflow-y: auto;overflow-x: hidden;">
-                            <div class="dd gr" data-value="hair">Hair</div>
-                            <div class="dd gr" data-value="dress">Dress</div>
-                            <div class="dd gr" data-value="skin">Skin</div>
-                            <div class="dd gr" data-value="shoe">Shoe</div>
+                            <button class="dd gr" data-value="hair">Hair</button>
+                            <button class="dd gr" data-value="dress">Dress</button>
+                            <button class="dd gr" data-value="skin">Skin</button>
+                            <button class="dd gr" data-value="shoe">Shoe</button>
                         </div>
                         <div class="row gap-1 x-auto y-hidden sel" id="sel"></div>
                     </div> 
                 </div>
             </div>
-            <div class="h-full hidden-sm w-full">
+        </div>
+        <div class="h-full hidden-sm main-layer py-2">
+            <div class="d-col h-400 mt-auto w-full">
                 <div class="w-full px-2 row">
                     <div class="" style="overflow-y: auto;height: 400px;overflow-x: hidden;">
-                        <div class="dd gr" data-value="hair">Hair</div>
-                        <div class="dd gr" data-value="dress">Dress</div>
-                        <div class="dd gr" data-value="skin">Skin</div>
-                        <div class="dd gr" data-value="shoe">Shoe</div>
+                        <button class="dd gr" data-value="hair">Hair</button>
+                        <button class="dd gr" data-value="dress">Dress</button>
+                        <button class="dd gr" data-value="skin">Skin</button>
+                        <button class="dd gr" data-value="shoe">Shoe</button>
                     </div>
                     <div class="flex-1 d-col">
                         <div class="flex-1">
@@ -574,11 +576,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="h-400 x-hidden y-auto sel2" id="sel"></div> 
+                    <div class="x-hidden y-auto sel2" style="height: 350px;" id="sel"></div> 
                 </div>
             </div>
         </div>
-        <!-- <div class="" style="height: 50px;background-color: #000;"></div> -->
     </div>
     <script>
         let openbar = document.querySelector('#openbar');
@@ -586,6 +587,7 @@
         let overleyClose = document.querySelector('#overlay-close');
         let sel = document.querySelector('.sel');
         let sel2 = document.querySelector('.sel2');
+        let ch = document.querySelectorAll('.gr');
 
         let assets = {
             "hair":[
@@ -618,9 +620,7 @@
                 'shoe3',
                 'shoe4'
             ],
-        }
-
-        let ch = document.querySelectorAll('.gr');
+        };
 
         ch.forEach(el => {
             el.onclick = (e) => {
@@ -629,8 +629,7 @@
                     r +=`
                         <div class="dd">${elem}</div>
                     `;
-                })
-                console.log(r)
+                });
                 sel.innerHTML = r;
                 sel2.innerHTML = r;
             }
