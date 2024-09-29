@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,24 @@
             margin: 0;
             box-sizing: border-box;
         }
+
         :root {
-            --blue:#2e3092;
-            --white:#fff;
+            --blue: #2e3092;
+            --white: #fff;
         }
+
         body {
             font-family: sans-serif;
         }
+
         a {
             text-decoration: none;
         }
+
         li {
             list-style: none;
         }
+
         .r-app {
             height: 100vh;
             width: 100%;
@@ -31,36 +37,46 @@
             flex-direction: column;
             overflow: hidden;
         }
+
         .row {
             display: flex;
             flex-direction: row;
         }
+
         .hr-row {
             display: flex;
             flex-direction: row;
             align-items: center;
         }
+
         .justify-center {
             justify-content: center;
         }
+
         .justify-around {
             justify-content: space-around;
         }
+
         .justify-betweeen {
             justify-content: space-between;
         }
+
         .items-center {
             align-items: center;
         }
-        .flex-1{
+
+        .flex-1 {
             flex: 1;
         }
+
         .gap-1 {
             gap: 1rem;
         }
+
         .gap-2 {
             gap: 1.5rem;
         }
+
         .gap-3 {
             gap: 3rem;
         }
@@ -69,12 +85,15 @@
         .mr-2 {
             margin-right: 8px;
         }
+
         .mr-4 {
             margin-right: 16px;
         }
+
         .mr-6 {
             margin-right: 24px;
         }
+
         .mr-auto {
             margin-right: auto;
         }
@@ -82,51 +101,66 @@
         .ml-2 {
             margin-left: 8px;
         }
+
         .ml-4 {
             margin-left: 16px;
         }
+
         .ml-6 {
             margin-left: 24px;
         }
+
         .ml-auto {
             margin-left: auto;
         }
+
         .mt-2 {
             margin-top: 8px;
         }
+
         .mt-4 {
             margin-top: 16px;
         }
+
         .mt-6 {
             margin-top: 24px;
         }
+
         .mt-auto {
             margin-top: auto;
         }
+
         .mb-2 {
             margin-bottom: 8px;
         }
+
         .mb-4 {
             margin-bottom: 16px;
         }
+
         .mb-6 {
             margin-bottom: 24px;
         }
+
         .mb-auto {
             margin-bottom: auto;
         }
+
         .mx-2 {
             margin-left: 8px;
             margin-right: 8px;
         }
+
         .mx-4 {
             margin-left: 16px;
             margin-right: 16px;
         }
+
         .mx-6 {
             margin-left: 24px;
             margin-right: 24px;
         }
+
         .mx-auto {
             margin-left: auto;
             margin-right: auto;
@@ -136,14 +170,17 @@
             margin-top: 8px;
             margin-bottom: 8px;
         }
+
         .my-4 {
             margin-top: 16px;
             margin-bottom: 16px;
         }
+
         .my-6 {
             margin-top: 24px;
             margin-bottom: 24px;
         }
+
         .my-auto {
             margin-top: auto;
             margin-bottom: auto;
@@ -154,18 +191,23 @@
         .pr-2 {
             padding-right: 8px;
         }
+
         .pr-4 {
             padding-right: 16px;
         }
+
         .pr-6 {
             padding-right: 24px;
         }
+
         .pl-2 {
             padding-left: 8px;
         }
+
         .pl-4 {
             padding-left: 16px;
         }
+
         .pl-6 {
             padding-left: 24px;
         }
@@ -173,9 +215,11 @@
         .pt-2 {
             padding-top: 8px;
         }
+
         .pt-4 {
             padding-top: 16px;
         }
+
         .pt-6 {
             padding-top: 24px;
         }
@@ -183,32 +227,40 @@
         .pb-2 {
             padding-bottom: 8px;
         }
+
         .pb-4 {
             padding-bottom: 16px;
         }
+
         .pb-6 {
             padding-bottom: 24px;
         }
+
         .px-2 {
             padding-left: 8px;
             padding-right: 8px;
         }
+
         .px-4 {
             padding-left: 16px;
             padding-right: 16px;
         }
+
         .px-6 {
             padding-left: 24px;
             padding-right: 24px;
         }
+
         .py-2 {
             padding-top: 8px;
             padding-bottom: 8px;
         }
+
         .py-4 {
             padding-top: 16px;
             padding-bottom: 16px;
         }
+
         .py-6 {
             padding-top: 24px;
             padding-bottom: 24px;
@@ -222,17 +274,22 @@
             font-size: large;
             border-radius: 4px;
         }
-        .form-control:focus, .form-control:hover {
+
+        .form-control:focus,
+        .form-control:hover {
             outline: none;
             box-shadow: 0px 0px 5px var(--blue)
         }
+
         .form-group {
             margin-top: 15px;
             margin-bottom: 15px;
         }
+
         .rounded-lg {
             border-radius: 10px;
         }
+
         .rounded-full {
             border-radius: 50%;
         }
@@ -245,6 +302,7 @@
             width: fit-content;
             font-size: large;
         }
+
         .btn-primary {
             background-color: var(--blue);
         }
@@ -252,36 +310,47 @@
         .font-xsm {
             font-size: x-small;
         }
+
         .font-sm {
             font-size: small;
         }
+
         .font-md {
             font-size: medium;
         }
+
         .font-lg {
             font-size: larger;
         }
+
         .font-xl {
             font-size: x-large;
         }
+
         .font-xxl {
-            font-size:xx-large;
+            font-size: xx-large;
         }
+
         .font-bold {
             font-weight: bold;
         }
+
         .text-center {
             text-align: center;
         }
+
         .text-left {
             text-align: left;
         }
+
         .text-right {
             text-align: right;
         }
+
         .text-dark {
             color: #151617;
         }
+
         .text-white {
             color: #fff;
         }
@@ -289,19 +358,29 @@
         .w-full {
             width: 100%;
         }
-        .w-400,.w-200, .w-600 {
+
+        .w-400,
+        .w-200,
+        .w-600 {
             width: 98%;
         }
+
         .h-screen {
             height: 100vh;
         }
+
         .h-full {
             height: 100%;
+        }
+
+        .h-400 {
+            height: 400px;
         }
 
         .pointer {
             cursor: pointer;
         }
+
         .hidden-sm {
             display: none;
         }
@@ -314,7 +393,7 @@
             height: 100vh;
             position: absolute;
             top: 0;
-            right:-200px;
+            right: -200px;
             z-index: 99;
             transition: all .3s linear;
         }
@@ -328,31 +407,38 @@
             .w-400 {
                 width: 400px;
             }
+
             .w-200 {
                 width: 200px;
             }
+
             .w-600 {
                 width: 600px;
             }
+
             .hidden-ls {
                 display: none;
             }
+
             .sidebar {
                 flex-direction: row;
-                background-color:transparent;
-                right:0px;
+                background-color: transparent;
+                right: 0px;
                 width: fit-content;
                 height: fit-content;
                 margin-right: 10px;
                 padding-right: 10px;
             }
-            .overlay-close  {
+
+            .overlay-close {
                 z-index: -1;
                 visibility: hidden;
             }
+
             .nav-item {
                 color: #000 !important;
             }
+
             .nav-item:hover {
                 border-bottom: 1px solid black;
             }
@@ -361,14 +447,17 @@
         .p-rel {
             position: relative;
         }
+
         .p-abs {
             position: absolute;
         }
+
         .p-fixed {
             position: fixed;
         }
+
         .overlay-close {
-            background-color: rgba(0,0,0, .1);
+            background-color: rgba(0, 0, 0, .1);
             height: 100%;
             width: 100%;
             position: fixed;
@@ -376,25 +465,29 @@
             top: 0;
             z-index: -1;
         }
+
         .ovr-open {
             z-index: 3;
             visibility: visible;
         }
+
         .sidelogo {
             position: relative;
             line-height: 15px;
             color: #fff;
         }
+
         .sidelogo::before {
             content: '';
             position: absolute;
             left: 0;
-            top:15px;
-            height:1px;
+            top: 15px;
+            height: 1px;
             width: 100%;
             background-color: #fff;
             z-index: -1;
         }
+
         .nav-item {
             color: #fff;
             transition: all .3s linear;
@@ -402,50 +495,60 @@
             display: block;
             padding: 5px;
         }
+
         .nav-item:hover {
             color: green;
             margin-left: 5px;
         }
+
         .main-layer {
             flex: 1;
         }
+
         .centered {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .circle-20 {
             height: 20px;
-            width: 20px;
+            min-width: 20px;
             border-radius: 50%;
         }
+
         .circle-30 {
             height: 30px;
-            width: 30px;
+            min-width: 30px;
             border-radius: 50%;
         }
+
         .circle-40 {
             height: 40px;
-            width: 40px;
+            min-width: 40px;
             border-radius: 50%;
         }
+
         .circle-60 {
             height: 60px;
-            width: 60px;
+            min-width: 60px;
             border-radius: 50%;
         }
+
         .circle-80 {
             height: 80px;
-            width: 80px;
+            min-width: 80px;
             border-radius: 50%;
         }
+
         .bg-blue {
             background-color: var(--blue);
         }
+
         .bg-white {
             background-color: var(--white);
         }
+
         .dd {
             height: 65px;
             width: 80px;
@@ -459,6 +562,7 @@
             align-items: center;
             cursor: pointer;
         }
+
         .aa {
             position: absolute;
             height: 15px;
@@ -466,172 +570,197 @@
             width: 150px;
             border-radius: 50%;
         }
+
         .aa1 {
             bottom: 25px;
-            left:10px;
+            left: 10px;
         }
+
         .aa2 {
             bottom: 30px;
-            left:10px;
+            left: 10px;
         }
+
         .aa3 {
             bottom: 40px;
-            left:10px;
+            left: 10px;
         }
+
         .aa4 {
             bottom: 35px;
-            left:10px;
+            left: 10px;
         }
+
         .d-col {
             display: flex;
             flex-direction: column;
         }
+
         .platform {
             height: 80px;
             width: 160px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .arr-right {
             right: 10px;
         }
+
         .arr-left {
             left: 10px;
         }
-        .w-3-12 {
-            width: 33.33%;
+
+        .x-hidden {
+            overflow-x: hidden;
+        }
+
+        .x-auto {
+            overflow-x: auto;
+        }
+
+        .y-hidden {
+            overflow-y: hidden;
+        }
+
+        .y-auto {
+            overflow-y: auto;
+        }
+
+        .img-cover {
+            object-fit: cover;
+        }
+
+        .w-100 {
+            width: 100px;
+        }
+
+        .rounded-3 {
+            border-radius: 30px;
+        }
+
+        .bg-dark {
+            background-color: rgba(21, 22, 23, .75);
+        }
+
+        .m-auto {
+            margin: auto;
+        }
+
+        .h-auto {
+            height: auto;
+        }
+
+        .h-100 {
+            height: 100px;
+        }
+
+        .h-80 {
+            height: 80px;
+        }
+
+        .h-50 {
+            height: 50px;
+        }
+
+        .character {
+            height: 400px;
+        }
+        .d-grid {
+            display: grid;
+        }
+        .grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .grid-4 {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
         }
     </style>
+    <link rel="stylesheet" href="./stylesheet/font-awesome.css">
 </head>
+
 <body>
-    <div class="r-app">
-        <header class="header hr-row justify-betweeen">
-            <div class="px-2 py-2">
-                <!-- <div id="openbar" class="pointer font-bold font-xl">
-                    &#9776;
-                </div> -->
-                <p class="my-2 font-sm">be the dream girl</p>
-                <div class="pointer font-bold font-lg logo">
-                    go Fashion!
+    <div class="r-app" style="background-image: linear-gradient(blue, pink);">
+        <header class="header">
+            <nav class="navigation w-full hr-row px-2 py-2 justify-between gap-2" style="overflow-x: auto;">
+                <div class="hr-row gap-2 w-full">
+                    <div class="p-rel text-white hr-row rounded-3 w-100 justify-betweeen bg-dark">
+                        <div class="circle-30 p-abs">
+                            <i class="fa fa-2x fa-money" style="color: green;"></i>
+                        </div>
+                        <div class="ml-auto">
+                            <span class="font-sm font-bold">1,605</span>
+                        </div>
+                        <div class="circle-20 bg-blue centered pointer" style="position: relative;right: -5px;">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="p-rel text-white hr-row rounded-3 w-100 justify-betweeen bg-dark">
+                        <div class="circle-30 p-abs" style="left: -8px;">
+                            <i class="fa fa-2x fa-star" style="color: gold;"></i>
+                        </div>
+                        <div class="ml-auto pr-2">
+                            <span class="font-sm font-bold">5</span>
+                        </div>
+                    </div>
                 </div>
-                <p class="my-2 font-sm">get desired cloths</p>
-            </div>
-            <div class="">
-                <div class="">
-                    CART <sup>2</sup>
-                </div>
-            </div>
-            <div class="px-2 py-2">
-                <div class="circle-40 bg-blue centered mx-auto">
-                    <div class="circle-20 bg-white"></div>
-                </div>
-                <p class="text-center font-sm">Hi Lisa, am karen <br>Your personal Assitant</p>
-            </div>
+                <a href="./dashboard.html">
+                    <div class="circle-40 centered pointer">
+                        <i class="fa fa-2x fa-home" style="color: #fff;"></i>
+                    </div>
+                </a>
+            </nav>
             <div class="overlay-close" id="overlay-close"></div>
         </header>
-        <div class="main-layer" style="overflow-y: auto;">
-            <div class="px-2 hr-row gap-1">
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button>+ Add</button>
+        <div class="main-layer h-full">
+            <div class="h-full d-col p-rel">
+                <div class="p-abs h-full w-100 px-2 d-col gap-1" style="top: 0;">
+                    <div class="">
+                        <a href="#" class="p-rel">
+                            <i class="fa fa-2x fa-shopping-basket"></i>
+                            <span class="circle-20 bg-blue centered text-white p-abs" style="top:-20px;right: -5px;">9</span>
+                        </a>
                     </div>
                 </div>
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button>+ Add</button>
+                <div class="w-full h-full centered y-auto">
+                    <div class="w-400 mx-auto d-grid grid-3 gap-1 y-auto">
+                        <a href="myshop.html?mat=trousers" class="d-col justify-center items-center bg-blue pointer" style="height: 80px;">
+                            <div class=""></div>
+                            <div class="mx-auto centered text-white">
+                                Trousers
+                            </div>
+                        </a>
+                        <a href="myshop.html?mat=shirts" class="d-col justify-center items-center bg-blue pointer" style="height: 80px;">
+                            <div class=""></div>
+                            <div class="mx-auto centered text-white">
+                                Shirts
+                            </div>
+                        </a>
+                        <a href="myshop.html?mat=skirts" class="d-col justify-center items-center bg-blue pointer" style="height: 80px;">
+                            <div class=""></div>
+                            <div class="mx-auto centered text-white">
+                                Skirts
+                            </div>
+                        </a>
+                        <a href="myshop.html?mat=gowns" class="d-col justify-center items-center bg-blue pointer" style="height: 80px;">
+                            <div class=""></div>
+                            <div class="mx-auto centered text-white">
+                                Gowns
+                            </div>
+                        </a>
+                        <a href="myshop.html?mat=bags" class="d-col justify-center items-center bg-blue pointer" style="height: 80px;">
+                            <div class=""></div>
+                            <div class="mx-auto centered text-white">
+                                Bags
+                            </div>
+                        </a>
+                        <a href="myshop.html?mat=hairs" class="d-col justify-center items-center bg-blue pointer" style="height: 80px;">
+                            <div class=""></div>
+                            <div class="mx-auto centered text-white">
+                                Hairs
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button clas>+ Add</button>
-                    </div>
-                </div>
-            </div><br>
-            <div class="px-2 hr-row gap-1">
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button>+ Add</button>
-                    </div>
-                </div>
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button>+ Add</button>
-                    </div>
-                </div>
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button clas>+ Add</button>
-                    </div>
-                </div>
-            </div><br>
-            <div class="px-2 hr-row gap-1">
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button>+ Add</button>
-                    </div>
-                </div>
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button>+ Add</button>
-                    </div>
-                </div>
-                <div class="d-col w-3-12" style="height: 150px;background-color: aqua;border-top-left-radius: 8px; border-top-right-radius: 10px;">
-                    <div class="mt-auto text-center" style="height:2px;">Golden Bag</div>
-                    <div class="hr-row justify-betweeen px-2 mt-auto" style="height: 40px;background-color: #2e3092;">
-                        <div class="">
-                            $2.00
-                        </div>
-                        <button clas>+ Add</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer">
-                <div class="px-2 py-2 rounded-lg hr-row justify-center gap-2">
-                    <div class="btn btn-primary w-200 centered text-white my-2 pointer">Home</div>
-                    <div class="btn btn-primary w-200 centered text-white my-2 pointer">Gift Item</div>
-                </div>
-                <div class="p-rel hr-row gap-1">
-                    <div class="arr-left p-abs pointer"><</div>
-                    <div class="mx-auto w-400 hr-row gap-1" style="overflow-x: auto;">
-                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
-                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
-                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
-                        <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
-                    </div>
-                    <div class="arr-right p-abs pointer">></div>
                 </div>
             </div>
         </div>
@@ -640,15 +769,17 @@
         let openbar = document.querySelector('#openbar');
         let sidebar = document.querySelector('#sidebar');
         let overleyClose = document.querySelector('#overlay-close');
+        let sel = document.querySelector('#sel');
 
-        openbar.onclick = (e) => {
-            sidebar.classList.toggle('sidebar-open');
-            overleyClose.classList.toggle('ovr-open');
-        }
-        overleyClose.onclick = (e) => {
-            sidebar.classList.toggle('sidebar-open');
-            overleyClose.classList.toggle('ovr-open');
-        }
+        // openbar.onclick = (e) => {
+        //     sidebar.classList.toggle('sidebar-open');
+        //     overleyClose.classList.toggle('ovr-open');
+        // }
+        // overleyClose.onclick = (e) => {
+        //     sidebar.classList.toggle('sidebar-open');
+        //     overleyClose.classList.toggle('ovr-open');
+        // }
     </script>
 </body>
+
 </html>

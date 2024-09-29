@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,html {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <script src="./p5js/p5.min.js"></script>
+    <script>
+        class Player {
+            constructor() {
+                this.x = innerWidth/2 - 100;
+                this.y = innerHeight/2 - 100;
+                this.xspeed = 0;
+                this.yspeed = 0;
+            }
+            draw() {
+                fill(255);
+                rect(this.x, this.y,   100, 100);
+            }
+            update() {
+                this.x += this.xspeed;
+                this.draw();
+            }
+        }
+        let player;
+
+        function keyPressed() {
+            if(keyCode === UP_ARROW) {
+
+            }
+        }
+
+        function setup() {
+            createCanvas(window.innerWidth, window.innerHeight);
+            player = new Player();
+        }
+
+        function draw() {
+            background(51);
+            player.update()
+        }
+    </script>
+</body>
+</html>

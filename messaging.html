@@ -501,20 +501,28 @@
         .w-4-12 {
             width: 25%;
         }
+        .bg-dark {
+            background-color: rgba(21, 22, 23, .75);
+        }
+        .text-dark {
+            color: #000 !important;
+        }
     </style>
 </head>
 <body>
-    <div class="r-app">
+    <div class="r-app" style="background-image: linear-gradient(blue, pink);">
         <header class="header hr-row justify-betweeen">
-            <div class="px-2 py-2">
+            <div class="px-2 py-2 p-rel">
                 <!-- <div id="openbar" class="pointer font-bold font-xl">
                     &#9776;
                 </div> -->
-                <p class="my-2 font-sm">be the dream girl</p>
-                <div class="pointer font-bold font-lg logo">
-                    go Fashion!
+                <!-- <p class="my-2 font-sm">be the dream girl</p> -->
+                <div class="pointer font-bold font-xl logo px-2 py-2">
+                    <a href="./dashboard.html">
+                        <h2 class="sidelogo text-center text-dark">Dream <br/>Girls</h2>
+                    </a>
                 </div>
-                <p class="my-2 font-sm">get desired cloths</p>
+                <!-- <p class="my-2 font-sm">get desired cloths</p> -->
             </div>
             <div class="px-2 py-2 d-col">
                 <div class="circle-40 bg-blue centered mx-auto">
@@ -524,7 +532,7 @@
             </div>
             <div class="overlay-close" id="overlay-close"></div>
         </header>
-        <div class="px-2 py-2 w-full hr-row gap-1" style="overflow-x: auto;">
+        <div class="px-4 py-2 w-full hr-row gap-1" style="overflow-x: auto;">
             <div class="bg-blue circle-40"></div>
             <div class="bg-blue circle-40"></div>
             <div class="bg-blue circle-40"></div>
@@ -537,7 +545,7 @@
             <div class="bg-blue circle-40"></div>
         </div>
         <div class="main-layer" style="overflow-y: auto;">
-            <div class="d-col gap-1 px-2 py-2" style="height:420px;overflow-y: auto;">
+            <div class="d-col gap-1 px-2 py-2" style="overflow-y: auto;">
                 <div class="hr-row justify-betweeen">
                     <div class="hr-row flex-1 mr-2">
                         <div class="mr-2 bg-blue circle-60"></div>
@@ -627,7 +635,7 @@
                     
                 </div>
             </div>
-            <div class="footer">
+            <!-- <div class="footer">
                 <div class="px-2 py-2 rounded-lg hr-row justify-center gap-2">
                     <div class="btn btn-primary w-200 centered text-white my-2 pointer">Home</div>
                     <div class="btn btn-primary w-200 centered text-white my-2 pointer">Store</div>
@@ -641,7 +649,7 @@
                         <div class="btn btn-primary w-200 centered text-white my-2 pointer"></div>
                     </div>
                     <div class="arr-right p-abs pointer">></div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
