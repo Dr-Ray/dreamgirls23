@@ -705,9 +705,71 @@
                 height: 0px;
             }
         }
+
+
+        /* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent, .tabcontent22{
+  /* display: none; */
+  visibility: hidden;
+    position: absolute;
+    right: 0;
+    width: 0;
+  /* padding: 6px 12px; */
+  /* border: 1px solid #ccc; */
+  /* border-top: none; */
+}
+
+/* .tabcontent, .tabcontent22 { */
+  /*animation: fadeEffect 1s; *//* Fading effect takes 1 second */
+/* } */
+.actve {
+    visibility: visible;
+    position: relative;
+    width: 320px;
+}
+
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Style the tab content */
+
         
     </style>
     <link rel="stylesheet" href="./stylesheet/font-awesome.css">
+    <link rel="stylesheet" href="./js/slick/slick.css">
+    <link rel="stylesheet" href="./js/slick/slick-theme.css">
 </head>
 
 <body>
@@ -754,30 +816,250 @@
                 </div>
                 <div class="d-col wardrobe py-2">
                     <div class="row h-300 mb-2">
-                        <div class="">
-                            <div class="bg-blue centered" style="height: 50px;width: 100px;">Hair</div>
-                            <div class="bg-dark centered" style="height: 50px;width: 100px;">clothes</div>
-                            <div class="bg-dark centered" style="height: 50px;width: 100px;">Gown</div>
-                            <div class="bg-dark centered" style="height: 50px;width: 100px;">Jacket</div>
-                        </div>
-                        <div class="bg-white h-full d-col ">
-                            <div class="hr-row py-2 mx-2">
-                                <button class="flex-1 mr-2 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button">Store</button>
-                                <button class="flex-1 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button">My items</button>
+                        <div class="d-col y-auto">
+                            <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'gown')">
+                                <img src="./images/gown.jpg" style="height:50px;width: 50px;" alt="">
                             </div>
-                            <div class="d-grid grid-3 py-2  y-auto">
-                                <div class="bg-blue" style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);"></div>
-                                <div class="bg-blue" style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);"></div>
-                                <div class="bg-blue" style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);"></div>
-                                <div class="bg-blue" style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);"></div>
-                                <div class="bg-dark" style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);"></div>
+                            <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'trousers')">
+                                <img src="./images/trousers.jpg" style="height:50px;width: 50px;" alt="">
+                            </div>
+                            <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'hair')">
+                                <img src="./images/hair.jpg" style="height:50px;width: 50px;" alt="">
+                            </div>
+                            <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'skirts')">
+                                <img src="./images/skirts.jpg" style="height:50px;width: 50px;" alt="">
+                            </div>
+                            <!-- <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'shirts')">
+                                <img src="./images/shirts.jpg" style="height:50px;width: 50px;" alt="">
+                            </div>
+                            <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'jacket')">
+                                <img src="./images/jacket.jpg" style="height:50px;width: 50px;" alt="">
+                            </div> -->
+                        </div>
+
+                        <div class="tabcontent flex-1 mr-2 actve" id="gown">
+                            <div class="bg-white h-full d-col">
+                                <div class="hr-row py-2 mx-2">
+                                    <button class="tablinks22 flex-1 mr-2 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'gown-store')">Store</button>
+                                    <button class="tablinks22 flex-1 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'gown-myItem')">My items</button>
+                                </div>
+                                
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22 actve" id="gown-store">
+                                        <div class="slider-items" style="overflow: hidden;">
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22" id="gown-myItem">
+                                        <div class="slider-items" style="width: 320px;overflow: hidden;">
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="tabcontent flex-1 mr-2" id="trousers">
+                            <div class="bg-white h-full d-col">
+                                <div class="hr-row py-2 mx-2">
+                                    <button class="tablink22 flex-1 mr-2 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'trousers-store')">Store</button>
+                                    <button class="tablinks22 flex-1 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'trousers-myItem')">My items</button>
+                                </div>
+                                
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22 actve" id="trousers-store">
+                                        <div class="slider-items" style="overflow: hidden;">
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22" id="trousers-myItem">
+                                        <div class="slider-items" style="width: 320px;overflow: hidden;">
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabcontent flex-1 mr-2" id="hair">
+                            <div class="bg-white h-full d-col">
+                                <div class="hr-row py-2 mx-2">
+                                    <button class="tablink22 flex-1 mr-2 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'hair-store')">Store</button>
+                                    <button class="tablinks22 flex-1 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'hair-myItem')">My items</button>
+                                </div>
+                                
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22 actve" id="hair-store">
+                                        <div class="slider-items" style="overflow: hidden;">
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22" id="hair-myItem">
+                                        <div class="slider-items" style="width: 320px;overflow: hidden;">
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabcontent flex-1 mr-2" id="skirts">
+                            <div class="bg-white h-full d-col">
+                                <div class="hr-row py-2 mx-2">
+                                    <button class="tablink22 flex-1 mr-2 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'skirts-store')">Store</button>
+                                    <button class="tablinks22 flex-1 btn-primary text-white" style="padding:8px 5px;outline: none;border: none;" type="button"  onclick="openCity(event, 'skirts-myItem')">My items</button>
+                                </div>
+                                
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22 actve" id="skirts-store">
+                                        <div class="slider-items" style="overflow: hidden;">
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#e0e0e0, #e8e8e8);overflow: hidden;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-rel" style="width: 320px;overflow: hidden;">
+                                    <div class="tabcontent22" id="skirts-myItem">
+                                        <div class="slider-items" style="width: 320px;overflow: hidden;">
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="d-grid grid-3 py-2 y-auto">
+                                                    <div style="margin:8px; height: 100px;min-width: 90px; background-image: linear-gradient(#fed1c8, #fee0d6);overflow: hidden;">
+                                                        <img src="./images/bags.jpg" style="height: 100px;width: auto;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="./js/jquery3.6.min.js"></script>
+    <script src="./js/slick/slick.min.js"></script>
     <script>
         let openbar = document.querySelector('#openbar');
         let sidebar = document.querySelector('#sidebar');
@@ -786,18 +1068,59 @@
         let basket = document.querySelector('#basket');
         let openBasket = document.querySelector('#openBasket');
 
-        openBasket.onclick = (e) => {
-            basket.classList.toggle('h-300');
-        }
+        $('.slider-items').slick({
+            infinite: true,
+            slidesToScroll: 1,
+            default:true
+        });
+    </script>
+    <script>
+        function wardrobe(evt, n) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
 
-        // openbar.onclick = (e) => {
-        //     sidebar.classList.toggle('sidebar-open');
-        //     overleyClose.classList.toggle('ovr-open');
-        // }
-        // overleyClose.onclick = (e) => {
-        //     sidebar.classList.toggle('sidebar-open');
-        //     overleyClose.classList.toggle('ovr-open');
-        // }
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.position = "absolute";
+                tabcontent[i].style.visibility = "hidden";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(n).style.visibility = "visible";
+            document.getElementById(n).style.position = "relative";
+            evt.currentTarget.className += " active";
+            // evt.currentTarget.classList.toggle('active');
+            document.querySelector(`#${n}-store`).classList.add('actve')
+        }
+        function openCity(evt, n) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent22");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.position = "absolute";
+            tabcontent[i].style.visibility = "hidden";
+            }
+
+            // // Get all elements with class="tablinks" and remove the class "active"
+            // tablinks = document.getElementsByClassName("tablinks22");
+            // for (i = 0; i < tablinks.length; i++) {
+            //     tablinks[i].className = tablinks[i].className.replace(" active", "");
+            // }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(n).style.visibility = "visible";
+            document.getElementById(n).style.position = "relative";
+            evt.currentTarget.className += " active";
+        }
     </script>
 </body>
 
