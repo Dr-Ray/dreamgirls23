@@ -30,6 +30,8 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            position: fixed;
+            top: 0;
         }
         .row {
             display: flex;
@@ -545,9 +547,11 @@
         }
     </style>
     <link rel="stylesheet" href="./stylesheet/font-awesome.css">
+    <link rel="stylesheet" href="./js/popup.css">
 </head>
 <body>
-    <div class="r-app" style="background-image: url('./images/cartoon-house-hallway-and-living-room-interior-free-vector.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
+    <canvas id="home"></canvas>
+    <div class="r-app">
         <header class="header">
             <nav class="navigation w-full hr-row px-2 py-2 justify-between gap-2" style="overflow-x: auto;">
                 <div class="hr-row gap-2 w-full">
@@ -641,8 +645,8 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="./">
-                            <i class="fa fa-2x fa-"></i>
+                        <a href="intedes.html">
+                            <img src="./images/intdes.jpg" style="height: 30px; width:30px;" alt="">
                         </a>
                     </div>
                     <div class="">
@@ -655,6 +659,8 @@
         </div>
         <!-- <div class="h-50"></div> -->
     </div>
+    <script src="./js/popup.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.2/popup.min.js"></script> -->
     <script>
         let openbar = document.querySelector('#openbar');
         let sidebar = document.querySelector('#sidebar');
@@ -662,18 +668,20 @@
         let sel = document.querySelector('#sel');
 
         let box = document.querySelector('#box');
-        box.onclick = (e) => {
-            console.log("Opening box...")
+        box.onclick = async (e) => {
+            const myPopup = new Popup({
+                id: "my-popup",
+                title: "My First Popup",
+                content: `
+                <div>Hello</div>
+                `,
+            });
+            myPopup.show();
+            // myPopup.hide()
         }
 
-        // openbar.onclick = (e) => {
-        //     sidebar.classList.toggle('sidebar-open');
-        //     overleyClose.classList.toggle('ovr-open');
-        // }
-        // overleyClose.onclick = (e) => {
-        //     sidebar.classList.toggle('sidebar-open');
-        //     overleyClose.classList.toggle('ovr-open');
-        // }
+
+
     </script>
 </body>
 </html>

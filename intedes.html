@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheet/font-awesome.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .h-300 {
+            height: 300px;
+        }
+
+        .d-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .y-auto {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .xy-auto {
+            overflow: auto;
+        }
+
+        .x-auto {
+            overflow-x: auto;
+        }
+
+        .mb-2 {
+            margin-bottom: 10px;
+        }
+
+        .centered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .w-250 {
+            width: 250px;
+        }
+
+        .w-300 {
+            width: 300px;
+        }
+
+        .h-screen {
+            height: 100vh;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .tabcontent {
+            animation: fadeEffect 1s;
+            /* Fading effect takes 1 second */
+        }
+
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        .d-grid {
+            display: grid;
+        }
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+        .grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .grid-4 {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .circle-40 {
+            height: 40px;
+            min-width: 40px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden;position: relative;">
+    <div class="r-app w-300" style="position: fixed;top: 0;">
+        <div class="row h-screen">
+            <div class="d-col y-auto">
+                <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
+                    onclick="wardrobe(event, 'gown')">
+                    <img src="./images/hanger.jpg" style="height:50px;width: 50px;" alt="">
+                </div>
+                <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
+                    onclick="wardrobe(event, 'trousers')">
+                    <img src="./images/trousers.jpg" style="height:50px;width: 50px;" alt="">
+                </div>
+                <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
+                    onclick="wardrobe(event, 'hair')">
+                    <img src="./images/hair.jpg" style="height:50px;width: 50px;" alt="">
+                </div>
+                <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
+                    onclick="wardrobe(event, 'skirts')">
+                    <img src="./images/skirts.jpg" style="height:50px;width: 50px;" alt="">
+                </div>
+                <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
+                    onclick="wardrobe(event, 'shirts')">
+                    <img src="./images/shirts.jpg" style="height:50px;width: 50px;" alt="">
+                </div>
+                <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
+                    onclick="wardrobe(event, 'jacket')">
+                    <img src="./images/jacket.jpg" style="height:50px;width: 50px;" alt="">
+                </div>
+            </div>
+            <div class="h-screen y-auto" style="background-color: rgba(26, 27, 27, .75);">
+                <div class="w-250 tabcontent active y-auto" id="gown">
+                    <div class="d-grid grid-3" style="gap: .5rem;padding: 10px;">
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
+                            pick1
+                        </div>
+                    </div>
+                </div>
+                <div class="w-250 tabcontent" id="trousers">
+                    Trousers
+                </div>
+                <div class="w-250 tabcontent y-auto" id="hair">
+                    Hair
+                </div>
+                <div class="w-250 tabcontent y-auto" id="skirts">
+                    Skirts
+                </div>
+                <div class="w-250 tabcontent y-auto" id="shirts">
+                    Shirts
+                </div>
+                <div class="w-250 tabcontent y-auto" id="jacket">
+                    Jacket
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="./dashboard.html" style="position: absolute;top: 0;right: 0;">
+        <div class="circle-40 centered pointer">
+            <i class="fa fa-2x fa-home" style="color: #fff;"></i>
+        </div>
+    </a>
+    <!-- <script src="./js/p5js/p5.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script> -->
+    <!-- <script src="https://q5js.org/q5.js"></script> -->
+		
+    <!-- <script src="https://p5play.org/v3/planck.min.js"></script> -->
+    <!-- <script src="https://p5play.org/v3/p5play.js"></script> -->
+     <script src="./js/q5.js"></script>
+     <script src="./js/planck.min.js"></script>
+     <script src="./js/p5play.js"></script>
+    <script>
+        function wardrobe(evt, n) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(n).style.display = "block";
+            evt.currentTarget.className += " active";
+            // evt.currentTarget.classList.toggle('active');
+        }
+    </script>
+    <script>
+        let sofa, carpet, vase, bg;
+        let character, characterBody;
+        let char;
+        let floor, leftWall, rightWall, mainWall;
+        let chair;
+
+        function preload() {
+            vase = loadImage('./images/vase.jpg');
+            carpet = loadImage('./images/carpet.png');
+            sofa = loadImage('./images/sofa.png');
+            bg = loadImage('./images/cartoon-house-hallway-and-living-room-interior-free-vector.jpg');
+            character = loadImage('./images/doll03-s8b4e697ee7.png');
+        }
+
+        class Character {
+            constructor() {
+                this.img = character;
+                this.width = this.img.width;
+                this.height = 400;
+                this.clothes = 840;
+                this.mv = 535;
+                this.x = width/2;
+                this.y = height - this.height;
+
+                this.clothe0 = 840;
+                this.clothe1 = 1375;
+                this.clothe2 = 1910;
+                this.clicked = false;
+                this.mouseOffset = {
+                    x:0,
+                    y:0
+                }
+            }
+            update() {
+                for (let touch of touches) {
+                    // console.log(touch.x, touch.y);
+                    if (
+                        (touch.x > this.x - this.width + 50) &&
+                        (touch.x < this.x + this.width + 50) &&
+                        (touch.y < this.y + this.height) && 
+                        (touch.y > this.y - this.height) && 
+                        !this.clicked && mouseIsPressed
+                    ) {
+                        this.clicked = true;
+                        this.mouseOffset = {
+                            x: touch.x - this.x,
+                            y: touch.y - this.y,
+                        }
+                    
+                    }
+                }
+                if (
+                    (mouseX > this.x - this.width + 50) &&
+                    (mouseX < this.x + this.width + 50) &&
+                    (mouseY < this.y + this.height) && 
+                    (mouseY > this.y - this.height) && 
+                    !this.clicked && mouseIsPressed
+                ) {
+                    this.clicked = true;
+                    this.mouseOffset = {
+                        x: mouseX - this.x,
+                        y: mouseY - this.y,
+                    }
+                
+                }
+                if(!mouseIsPressed){
+                    this.clicked = false;
+                }
+
+                if(this.clicked){
+                    this.x = mouseX - this.mouseOffset.x;
+                    this.y = mouseY - this.mouseOffset.y;
+                    this.track();
+                }
+            }
+            draw(){
+                // Draw character body
+                image(this.img, this.x, this.y, this.width - 50, this.height, 0, 840, this.width, this.mv);
+                // Draw Face
+                image(this.img, this.x, this.y, this.width - 50, 110, 0, 280, this.width, 134);
+                // draw character clothes
+                image(this.img, this.x, this.y, this.width - 50, this.height, 0, this.clothes+535, this.width, this.mv);
+                // Draw hair
+                image(this.img, this.x, this.y, this.width - 50, 120, 0, 150, this.width, 134);
+            }
+            changeClothes() {
+                this.clothes +=535;
+            }
+
+            track() {
+                // Top
+                line(this.x, this.y, this.x + this.width, this.y);
+                // right
+                stroke(255);
+                line(this.x + this.width, this.y, this.x + this.width, this.y + this.height);
+                // bottom
+                stroke(255);
+                line(this.x + this.width, this.y + this.height, this.x, this.y + this.height);
+                stroke(255);
+                // left
+                line(this.x, this.y + this.height, this.x, this.y);
+            }
+        }
+        class SofaChair {
+            constructor(x, y, w, h, img) {
+                this.x = x;
+                this.y = y;
+                this.width = w;
+                this.height = h;
+                this.img = img;
+
+                this.clicked = false;
+                this.mouseOffset = {
+                    x:0,
+                    y:0
+                }
+            }
+
+            update() {
+                if (
+                    (mouseX > this.x - this.width) &&
+                    (mouseX < this.x + this.width) &&
+                    (mouseY < this.y + this.height) && 
+                    (mouseY > this.y - this.height) && 
+                    !this.clicked && mouseIsPressed
+                ) {
+                    this.clicked = true;
+                    this.mouseOffset = {
+                        x: mouseX - this.x,
+                        y: mouseY - this.y,
+                    }
+                }
+                if(!mouseIsPressed){
+                    this.clicked = false;
+                }
+
+                if(this.clicked){
+                    this.x = mouseX - this.mouseOffset.x;
+                    this.y = mouseY - this.mouseOffset.y;
+                    this.track();
+                }
+            }
+
+            draw(){
+                image(this.img, this.x, this.y, this.width, this.height);
+            }
+
+            track() {
+                // Top
+                line(this.x, this.y, this.x + this.width, this.y);
+                // right
+                stroke(255);
+                line(this.x + this.width, this.y, this.x + this.width, this.y + this.height);
+                // bottom
+                stroke(255);
+                line(this.x + this.width, this.y + this.height, this.x, this.y + this.height);
+                stroke(255);
+                // left
+                line(this.x, this.y + this.height, this.x, this.y);
+            }
+        }
+        class Wall {
+            constructor(x, y, w, h, color) {
+                this.x = x;
+                this.y = y;
+                this.width = w;
+                this.height = h;
+                this.paint = color;
+            }
+
+            draw() {
+                fill(this.paint.r, this.paint.g, this.paint.b);
+                rect(this.x, this.y, this.width, this.height);
+            } 
+        }
+
+        function setup() {
+            createCanvas(window.innerWidth, window.innerHeight);
+            background(33, 33, 33);
+            char = new Character();
+            floor = new Wall(0, (height - 100), width, 100, {r:255, g:178, b:104});
+            mainWall = new Wall((width - 180), 0, (width - 180), (height - 100), {r:20, g:20, b:20});
+            leftWall = new Wall(0, 0, 180, height - 60, {r:33, g:33, b:33});
+            rightWall = new Wall((width - 180), 0, 180, height - 60, {r:33, g:33, b:33});
+            chair = new SofaChair(width/2, height/2 - 50, 400, 230, sofa);
+        }
+
+        function draw() {
+            clear();
+            // Bottom carpet
+            floor.draw();
+            // Bg wall
+            mainWall.draw();
+            // right wall
+            rightWall.draw();
+            // left wall
+            leftWall.draw();
+            // SofaChair
+            chair.draw();
+            chair.update();
+            // Draw character
+            char.draw();
+            char.update();
+        }
+    </script>
+</body>
+
+</html>
