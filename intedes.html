@@ -103,165 +103,78 @@
             min-width: 40px;
             border-radius: 50%;
         }
+        .smooth {
+            transition: all .3s linear;
+        }
+
+        .cls {
+            left: -290px;
+        }
     </style>
 </head>
 
 <body style="overflow: hidden;position: relative;">
-    <div class="r-app w-300" style="position: fixed;top: 0;">
+    <div class="r-app w-300 smooth" style="position: fixed;top: 0;" id="bcc">
         <div class="row h-screen">
             <div class="d-col y-auto">
                 <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
-                    onclick="wardrobe(event, 'gown')">
-                    <img src="./images/hanger.jpg" style="height:50px;width: 50px;" alt="">
+                    onclick="wardrobe(event, 'paint')">
+                    <img src="./images/couch.jpg" style="height:50px;width: 50px;" alt="">
                 </div>
                 <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
-                    onclick="wardrobe(event, 'trousers')">
-                    <img src="./images/trousers.jpg" style="height:50px;width: 50px;" alt="">
+                    onclick="wardrobe(event, 'couch')">
+                    <img src="./images/table.jpg" style="height:50px;width: 50px;" alt="">
                 </div>
                 <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
-                    onclick="wardrobe(event, 'hair')">
-                    <img src="./images/hair.jpg" style="height:50px;width: 50px;" alt="">
+                    onclick="wardrobe(event, 'table')">
+                    <img src="./images/table.jpg" style="height:50px;width: 50px;" alt="">
                 </div>
                 <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
-                    onclick="wardrobe(event, 'skirts')">
-                    <img src="./images/skirts.jpg" style="height:50px;width: 50px;" alt="">
+                    onclick="wardrobe(event, 'beds')">
+                    <img src="./images/beds.jpg" style="height:50px;width: 50px;" alt="">
                 </div>
                 <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
-                    onclick="wardrobe(event, 'shirts')">
-                    <img src="./images/shirts.jpg" style="height:50px;width: 50px;" alt="">
+                    onclick="wardrobe(event, 'tv')">
+                    <img src="./images/tv.jpg" style="height:50px;width: 50px;" alt="">
                 </div>
                 <div class="bg-white centered tablinks" style="height: 50px;width:50px;"
-                    onclick="wardrobe(event, 'jacket')">
-                    <img src="./images/jacket.jpg" style="height:50px;width: 50px;" alt="">
+                    onclick="wardrobe(event, 'wardrobe')">
+                    <img src="./images/wardrobe.jpg" style="height:50px;width: 50px;" alt="">
                 </div>
             </div>
             <div class="h-screen y-auto" style="background-color: rgba(26, 27, 27, .75);">
-                <div class="w-250 tabcontent active y-auto" id="gown">
+                <a href="#" style="position: absolute;top: 0;right: -30px;" id="gcc">
+                    <div class="circle-40 centered pointer">
+                        <i class="fa fa-2x fa-navicon" style="color: #fff;"></i>
+                    </div>
+                </a>
+                <div class="w-250 tabcontent active y-auto p-rel" id="paint">
                     <div class="d-grid grid-3" style="gap: .5rem;padding: 10px;">
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
+                        <div class="centered" style="height: 50px;width: auto;" id="sofa1" data-ext=".jpg">
+                            <img src="./images/sofa-removebg-preview.png" style="height: 50px;width: auto;" alt="">
                         </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
+                        <div class="centered" style="height: 50px;width: auto;" id="sofa2" data-ext=".jpg">
+                            <img src="./images/sofa2-removebg-preview.png" style="height: 50px;width: auto;" alt="">
                         </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
-                        </div>
-                        <div class="centered" style="height: 50px;width: auto;background-color: blueviolet;">
-                            pick1
+                        <div class="centered" style="height: 50px;width: auto;" id="sofa" data-ext=".png">
+                            <img src="./images/sofa.png" style="height: 50px;width: auto;" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="w-250 tabcontent" id="trousers">
-                    Trousers
+                <div class="w-250 tabcontent" id="couch">
+                    Couch
                 </div>
-                <div class="w-250 tabcontent y-auto" id="hair">
-                    Hair
+                <div class="w-250 tabcontent y-auto" id="table">
+                    Table
                 </div>
-                <div class="w-250 tabcontent y-auto" id="skirts">
-                    Skirts
+                <div class="w-250 tabcontent y-auto" id="beds">
+                    Bed
                 </div>
-                <div class="w-250 tabcontent y-auto" id="shirts">
-                    Shirts
+                <div class="w-250 tabcontent y-auto" id="tv">
+                    Tv
                 </div>
-                <div class="w-250 tabcontent y-auto" id="jacket">
-                    Jacket
+                <div class="w-250 tabcontent y-auto" id="wardrobe">
+                    Wardrobe
                 </div>
             </div>
         </div>
@@ -271,6 +184,7 @@
             <i class="fa fa-2x fa-home" style="color: #fff;"></i>
         </div>
     </a>
+   
     <!-- <script src="./js/p5js/p5.min.js"></script> -->
     <!-- <script src="https://unpkg.com/tippy.js@2/dist/tippy.all.min.js"></script> -->
     <!-- <script src="https://q5js.org/q5.js"></script> -->
@@ -310,14 +224,20 @@
         let floor, leftWall, rightWall, mainWall;
         let chair;
 
+        let gcc = document.querySelector('#gcc');
+        let bcc = document.querySelector('#bcc');
+
+        gcc.onclick = (e) => {
+            bcc.classList.toggle('cls');
+        }
+
         function preload() {
             vase = loadImage('./images/vase.jpg');
             carpet = loadImage('./images/carpet.png');
             sofa = loadImage('./images/sofa.png');
-            bg = loadImage('./images/cartoon-house-hallway-and-living-room-interior-free-vector.jpg');
+            bg = loadImage('./images/bedroom3.jpg');
             character = loadImage('./images/doll03-s8b4e697ee7.png');
         }
-
         class Character {
             constructor() {
                 this.img = character;
@@ -356,10 +276,10 @@
                     }
                 }
                 if (
-                    (mouseX > this.x - this.width + 50) &&
-                    (mouseX < this.x + this.width + 50) &&
-                    (mouseY < this.y + this.height) && 
-                    (mouseY > this.y - this.height) && 
+                    (mouseX >= this.x) &&
+                    (mouseX <= this.x + this.width - 50) &&
+                    (mouseY <= this.y + this.height) && 
+                    (mouseY >= this.y - this.height) && 
                     !this.clicked && mouseIsPressed
                 ) {
                     this.clicked = true;
@@ -407,6 +327,22 @@
                 line(this.x, this.y + this.height, this.x, this.y);
             }
         }
+        class Wall {
+            constructor(x, y, w, h, color) {
+                this.x = x;
+                this.y = y;
+                this.width = w;
+                this.height = h;
+                this.paint = color;
+            }
+
+            draw() {
+                fill(this.paint.r, this.paint.g, this.paint.b);
+                rect(this.x, this.y, this.width, this.height);
+            } 
+        }
+
+
         class SofaChair {
             constructor(x, y, w, h, img) {
                 this.x = x;
@@ -465,21 +401,7 @@
                 line(this.x, this.y + this.height, this.x, this.y);
             }
         }
-        class Wall {
-            constructor(x, y, w, h, color) {
-                this.x = x;
-                this.y = y;
-                this.width = w;
-                this.height = h;
-                this.paint = color;
-            }
-
-            draw() {
-                fill(this.paint.r, this.paint.g, this.paint.b);
-                rect(this.x, this.y, this.width, this.height);
-            } 
-        }
-
+        
         function setup() {
             createCanvas(window.innerWidth, window.innerHeight);
             background(33, 33, 33);
@@ -503,11 +425,13 @@
             leftWall.draw();
             // SofaChair
             chair.draw();
-            chair.update();
+                chair.update();
             // Draw character
             char.draw();
             char.update();
         }
+
+        // char.draggable();
     </script>
 </body>
 
