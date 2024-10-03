@@ -148,7 +148,7 @@
                         <i class="fa fa-2x fa-navicon" style="color: #fff;"></i>
                     </div>
                 </a>
-                <div class="w-250 tabcontent active y-auto p-rel" id="paint">
+                <div class="w-250 tabcontent active y-auto x-auto p-rel" id="paint">
                     <div class="d-grid grid-3" style="gap: .5rem;padding: 10px;">
                         <div class="centered" style="height: 50px;width: auto;" id="sofa1" data-ext=".jpg">
                             <img src="./images/sofa-removebg-preview.png" style="height: 50px;width: auto;" alt="">
@@ -161,19 +161,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-250 tabcontent" id="couch">
+                <div class="w-250 tabcontent y-auto x-auto p-rel" id="couch">
                     Couch
                 </div>
-                <div class="w-250 tabcontent y-auto" id="table">
+                <div class="w-250 tabcontent y-auto x-auto p-rel" id="table">
                     Table
                 </div>
-                <div class="w-250 tabcontent y-auto" id="beds">
+                <div class="w-250 tabcontent y-auto x-auto p-rel" id="beds">
                     Bed
                 </div>
-                <div class="w-250 tabcontent y-auto" id="tv">
+                <div class="w-250 tabcontent y-auto x-auto p-rel" id="tv">
                     Tv
                 </div>
-                <div class="w-250 tabcontent y-auto" id="wardrobe">
+                <div class="w-250 tabcontent y-auto x-auto p-rel" id="wardrobe">
                     Wardrobe
                 </div>
             </div>
@@ -261,17 +261,17 @@
                 for (let touch of touches) {
                     // console.log(touch.x, touch.y);
                     if (
-                        (touch.x > this.x - this.width + 50) &&
-                        (touch.x < this.x + this.width + 50) &&
-                        (touch.y < this.y + this.height) && 
-                        (touch.y > this.y - this.height) && 
+                        (touch.x >= this.x) &&
+                        (touch.x <= this.x + this.width - 50) &&
+                        (touch.y <= this.y + this.height) && 
+                        (touch.y >= this.y) && 
                         !this.clicked && mouseIsPressed
                     ) {
                         this.clicked = true;
-                        this.mouseOffset = {
-                            x: touch.x - this.x,
-                            y: touch.y - this.y,
-                        }
+                        // this.mouseOffset = {
+                        //     x: touch.x - this.x,
+                        //     y: touch.y - this.y,
+                        // }
                     
                     }
                 }
@@ -279,7 +279,7 @@
                     (mouseX >= this.x) &&
                     (mouseX <= this.x + this.width - 50) &&
                     (mouseY <= this.y + this.height) && 
-                    (mouseY >= this.y - this.height) && 
+                    (mouseY >= this.y) && 
                     !this.clicked && mouseIsPressed
                 ) {
                     this.clicked = true;
@@ -287,13 +287,15 @@
                         x: mouseX - this.x,
                         y: mouseY - this.y,
                     }
-                
                 }
+
                 if(!mouseIsPressed){
                     this.clicked = false;
+                    cursor(ARROW)
                 }
 
                 if(this.clicked){
+                    cursor('grab');
                     this.x = mouseX - this.mouseOffset.x;
                     this.y = mouseY - this.mouseOffset.y;
                     this.track();
