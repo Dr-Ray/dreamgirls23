@@ -1,13 +1,762 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dress-Up Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./js/slick/slick.css">
+    <link rel="stylesheet" href="./js/slick/slick-theme.css">
+    <style>
+        /* General Styles */
+        :root {
+            --blue: #2e3092;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .r-app {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .hr-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-around {
+            justify-content: space-around;
+        }
+
+        .justify-betweeen {
+            justify-content: space-between;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .gap-1 {
+            gap: 1rem;
+        }
+
+        .gap-2 {
+            gap: 1.5rem;
+        }
+
+        .gap-3 {
+            gap: 3rem;
+        }
+
+
+        .mr-2 {
+            margin-right: 8px;
+        }
+
+        .mr-4 {
+            margin-right: 16px;
+        }
+
+        .mr-6 {
+            margin-right: 24px;
+        }
+
+        .mr-auto {
+            margin-right: auto;
+        }
+
+        .ml-2 {
+            margin-left: 8px;
+        }
+
+        .ml-4 {
+            margin-left: 16px;
+        }
+
+        .ml-6 {
+            margin-left: 24px;
+        }
+
+        .ml-auto {
+            margin-left: auto;
+        }
+
+        .mt-2 {
+            margin-top: 8px;
+        }
+
+        .mt-4 {
+            margin-top: 16px;
+        }
+
+        .mt-6 {
+            margin-top: 24px;
+        }
+
+        .mt-auto {
+            margin-top: auto;
+        }
+
+        .mb-2 {
+            margin-bottom: 8px;
+        }
+
+        .mb-4 {
+            margin-bottom: 16px;
+        }
+
+        .mb-6 {
+            margin-bottom: 24px;
+        }
+
+        .mb-auto {
+            margin-bottom: auto;
+        }
+
+        .mx-2 {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .mx-4 {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        .mx-6 {
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .my-2 {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .my-4 {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .my-6 {
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .my-auto {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+
+
+        .pr-2 {
+            padding-right: 8px;
+        }
+
+        .pr-4 {
+            padding-right: 16px;
+        }
+
+        .pr-6 {
+            padding-right: 24px;
+        }
+
+        .pl-2 {
+            padding-left: 8px;
+        }
+
+        .pl-4 {
+            padding-left: 16px;
+        }
+
+        .pl-6 {
+            padding-left: 24px;
+        }
+
+        .pt-2 {
+            padding-top: 8px;
+        }
+
+        .pt-4 {
+            padding-top: 16px;
+        }
+
+        .pt-6 {
+            padding-top: 24px;
+        }
+
+        .pb-2 {
+            padding-bottom: 8px;
+        }
+
+        .pb-4 {
+            padding-bottom: 16px;
+        }
+
+        .pb-6 {
+            padding-bottom: 24px;
+        }
+
+        .px-2 {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .px-4 {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .px-6 {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .py-2 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .py-4 {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        .py-6 {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 5px;
+            border: none;
+            outline: 1px solid var(--blue);
+            font-size: large;
+            border-radius: 4px;
+        }
+
+        .form-control:focus,
+        .form-control:hover {
+            outline: none;
+            box-shadow: 0px 0px 5px var(--blue)
+        }
+
+        .form-group {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .rounded-lg {
+            border-radius: 10px;
+        }
+
+        .rounded-full {
+            border-radius: 50%;
+        }
+
+        .btn {
+            display: block;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: fit-content;
+            font-size: large;
+        }
+
+        .btn-primary {
+            background-color: var(--blue);
+        }
+
+        .font-xsm {
+            font-size: x-small;
+        }
+
+        .font-sm {
+            font-size: small;
+        }
+
+        .font-md {
+            font-size: medium;
+        }
+
+        .font-lg {
+            font-size: larger;
+        }
+
+        .font-xl {
+            font-size: x-large;
+        }
+
+        .font-xxl {
+            font-size: xx-large;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-dark {
+            color: #151617;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #ffffff;
+        }
+
+        /* Landing Page Layout */
+        .landing-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            /* background-color: #0c0800; */
+
+            background-image: linear-gradient(#100509, #100509, #c20003);
+            background-size: cover;
+            background-position: center;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            text-align: center;
+            background-color: #ce8a1b;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Main Content */
+        main {
+            text-align: center;
+            color: #000000;
+            background-color: #000;
+            width: 900px;
+            height: 100%;
+            background-image: url('./images/istockphoto-1201211049-612x612.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .game-intro h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ce8a1b;
+        }
+
+        .game-intro p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ce8a1b;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d9a425;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            background-color: #cd861b;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+
+        footer .btn:hover {
+            background-color: #ce9b24;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .game-intro h2 {
+                font-size: 2em;
+            }
+
+            .game-intro p {
+                font-size: 1em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .hidden-sm {
+            display: none;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            background-color: #151617;
+            width: 350px;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: -360px;
+            z-index: 99;
+            transition: all .3s linear;
+        }
+
+        .sidebar-open {
+            right: 0 !important;
+        }
+
+        /* Large devices (Tablets and Laptops) */
+        @media screen and (min-width:600px) {
+            .w-400 {
+                width: 460px;
+            }
+
+            .w-200 {
+                width: 200px;
+            }
+
+            .w-300 {
+                width: 300px;
+            }
+
+            .w-600 {
+                width: 600px;
+            }
+
+            .hidden-ls {
+                display: none;
+            }
+
+            .sidebar {
+                flex-direction: row;
+                background-color: transparent;
+                right: 0px;
+                width: fit-content;
+                height: fit-content;
+                margin-right: 10px;
+                padding-right: 10px;
+            }
+
+            .overlay-close {
+                z-index: -1;
+                visibility: hidden;
+            }
+
+            .nav-item {
+                color: #000 !important;
+            }
+
+            .nav-item:hover {
+                border-bottom: 1px solid black;
+            }
+
+            .d-row-col {
+                display: flex;
+                flex-direction: row !important;
+            }
+        }
+
+        .p-rel {
+            position: relative;
+        }
+
+        .p-abs {
+            position: absolute;
+        }
+
+        .p-fixed {
+            position: fixed;
+        }
+
+        .overlay-close {
+            background-color: rgba(0, 0, 0, .1);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            visibility: hidden;
+            top: 0;
+            z-index: -1;
+        }
+
+        .ovr-open {
+            z-index: 3;
+            visibility: visible;
+        }
+
+        .sidelogo {
+            position: relative;
+            line-height: 15px;
+            color: #fff;
+        }
+
+        .sidelogo::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            height: 1px;
+            width: 100%;
+            background-color: #fff;
+            z-index: -1;
+        }
+
+        .nav-item {
+            color: #fff;
+            transition: all .3s linear;
+            width: 100%;
+            display: block;
+            padding: 5px;
+        }
+
+        .nav-item:hover {
+            color: green;
+            margin-left: 5px;
+        }
+
+        .main-layer {
+            flex: 1;
+        }
+
+        .centered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .d-row-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .y-auto {
+            overflow-y: auto;
+        }
+
+        .d-col {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Landing Page -->
+    <div class="landing-page">
+        <header class="header">
+            <nav class="hr-row justify-betweeen p-rel">
+                <div class="pointer font-bold font-xl logo px-2 py-2 text-center">
+                    DreamGirls
+                </div>
+                <div id="openbar" class="hidden-ls pointer font-bold font-xl px-2 py-2">
+                    &#9776;
+                </div>
+                <div class="overlay-close" id="overlay-close"></div>
+                <div class="sidebar gap-1 py-2" id="sidebar">
+                    <div class="hidden-ls my-4 px-2">
+                        <h1 class="sidelogo text-center">Dream <br />Girls</h1>
+                    </div>
+                    <li>
+                        <a class="nav-item font-bold" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-item font-bold" href="">Travel</a>
+                    </li>
+                    <li>
+                        <a class="nav-item font-bold" href="#">Shopping</a>
+                    </li>
+                    <li>
+                        <a class="nav-item font-bold" href="#">Games</a>
+                    </li>
+                    <li>
+                        <a class="nav-item font-bold" href="#">Interior Design</a>
+                    </li>
+                    <li>
+                        <a class="nav-item font-bold" href="#">Activities</a>
+                    </li>
+                    <li>
+                        <a class="nav-item font-bold" href="#">Login</a>
+                    </li>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="game-intro">
+                <div class="slider-for">
+                    <div style="height: 460px;">
+                        <h3>1</h3>
+                    </div>
+                    <div style="height: 460px;background-color: #585979;">
+                        <h3>2</h3>
+                    </div>
+                    <div style="height: 460px;background-color: #060614;">
+                        <h3>3</h3>
+                    </div>
+                    <div style="height: 460px;background-color: #3e0655;">
+                        <h3>4</h3>
+                    </div>
+                    <div style="height: 460px;background-color: #c3c4d1;">
+                        <h3>5</h3>
+                    </div>
+                    <div style="height: 460px;background-color: #202022;">
+                        <h3>6</h3>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="slider-nav" style="width: 300px;margin:0 auto;">
+                <div class="" style="height: 50px;width: 50px !important;border-radius: 50%;align-items: center;justify-content: center;display: flex;">
+                    <h3>1</h3>
+                </div>
+                <div style="height: 50px;width: 50px !important;border-radius: 50%;align-items: center;justify-content: center;display: flex;">
+                    <h3>2</h3>
+                </div>
+                <div style="height: 50px;width: 50px !important;border-radius: 50%;align-items: center;justify-content: center;display: flex;">
+                    <h3>3</h3>
+                </div>
+                <div style="height: 50px;width: 50px !important;border-radius: 50%;align-items: center;justify-content: center;display: flex;">
+                    <h3>4</h3>
+                </div>
+                <div style="height: 50px;width: 50px !important;border-radius: 50%;align-items: center;justify-content: center;display: flex;">
+                    <h3>5</h3>
+                </div>
+                <div style="height: 50px;width: 50px !important;border-radius: 50%;align-items: center;justify-content: center;display: flex;">
+                    <h3>6</h3>
+                </div>
+            </div>
+        </footer>
+        <footer>
+            <button class="btn help">Continue</button>
+        </footer>
+    </div>
+    <script src="./js/jquery3.6.min.js"></script>
+    <script src="./js/slick/slick.min.js"></script>
     <script>
-        window.location = "dashboard.html";
+        $(document).ready(function () {
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: false,
+                centerMode: true,
+                focusOnSelect: true
+            });
+        });
+
+        let openbar = document.querySelector('#openbar');
+        let sidebar = document.querySelector('#sidebar');
+        let overleyClose = document.querySelector('#overlay-close');
+
+        openbar.onclick = (e) => {
+            sidebar.classList.toggle('sidebar-open');
+            overleyClose.classList.toggle('ovr-open');
+        }
+
+        overleyClose.onclick = (e) => {
+            sidebar.classList.toggle('sidebar-open');
+            overleyClose.classList.toggle('ovr-open');
+        }
+
     </script>
 </body>
+
 </html>

@@ -762,6 +762,10 @@
   from {opacity: 0;}
   to {opacity: 1;}
 }
+.link-active {
+    background-color: #2e3092;
+    color:#fff;
+}
 
 /* Style the tab content */
 
@@ -773,7 +777,7 @@
 </head>
 
 <body>
-    <div class="r-app" style="background-image: linear-gradient(blue, pink);">
+    <div class="r-app" style="background-image: linear-gradient(rgb(40, 40, 104), pink);">
         <header class="header">
             <nav class="navigation w-full hr-row px-2 py-2 justify-between gap-2" style="overflow-x: auto;">
                 <div class="hr-row gap-2 w-full">
@@ -817,7 +821,7 @@
                 <div class="d-col wardrobe py-2">
                     <div class="row h-300 mb-2">
                         <div class="d-col y-auto">
-                            <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'gown')">
+                            <div class="bg-white centered tablinks link-active" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'gown')">
                                 <img src="./images/gown.jpg" style="height:50px;width: 50px;" alt="">
                             </div>
                             <div class="bg-white centered tablinks" style="height: 50px;width: 100px;" onclick="wardrobe(event, 'trousers')">
@@ -1089,14 +1093,14 @@
             // Get all elements with class="tablinks" and remove the class "active"
             tablinks = document.getElementsByClassName("tablinks");
             for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                tablinks[i].className = tablinks[i].className.replace(" link-active", "");
             }
 
             // Show the current tab, and add an "active" class to the link that opened the tab
             document.getElementById(n).style.visibility = "visible";
             document.getElementById(n).style.position = "relative";
-            evt.currentTarget.className += " active";
-            // evt.currentTarget.classList.toggle('active');
+            evt.currentTarget.className += " link-active";
+            // evt.currentTarget.classList.toggle('link-active');
             document.querySelector(`#${n}-store`).classList.add('actve');
         }
         function openCity(evt, n) {
@@ -1107,13 +1111,13 @@
             tabcontent = document.getElementsByClassName("tabcontent22");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.position = "absolute";
-            tabcontent[i].style.visibility = "hidden";
+                tabcontent[i].style.visibility = "hidden";
             }
 
             // // Get all elements with class="tablinks" and remove the class "active"
             // tablinks = document.getElementsByClassName("tablinks22");
             // for (i = 0; i < tablinks.length; i++) {
-            //     tablinks[i].className = tablinks[i].className.replace(" active", "");
+            //     tablinks[i].className = tablinks[i].className.replace(" link-active", "");
             // }
 
             // Show the current tab, and add an "active" class to the link that opened the tab
